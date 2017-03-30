@@ -16,6 +16,6 @@ The aim is also to construct following "Day by day" information:
 - Goal (+ / - )
 
 # Dependency
-- Python 3.x
+- Python 2.7
 - urllib2
 - BeautifulSoup
