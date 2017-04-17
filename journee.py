@@ -36,6 +36,11 @@ class Journee :
         print("- Journee %02d" % self.num)
         self.print_result()
 
+    def is_played(self):
+        for match in self.matches:
+            if match.isplayed:
+                return True
+        return False
 
 
 #resevent  = soup.findAll('table', {'class':'res  even'})
