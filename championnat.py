@@ -65,3 +65,42 @@ class Championnat():
     def print_team(self):
         for team in self.teams:
             team.print_team()
+
+    def print_rankings(self):
+        print("%-35s %02s %02s %02s" % ("Name", "Cl", "At", "Df"))
+        for team in self.teams:
+            print("%-35s %02d %02d %02d" % (team.name, team.pos, team.attaq_class, team.def_class))
+
+    def dbd_general(self):
+        result = []
+        # Create temporary championship
+        tmp_chpt = Championnat()
+        for team in self.teams:
+            tmp_chpt.add_team(team)
+        for day in self.journees:
+            tmp_chpt.add_journee(day)
+            result.append(tmp_chpt.classByPoint)
+        return result
+
+    def dbd_attack(self):
+        result = []
+        # Create temporary championship
+        tmp_chpt = Championnat()
+        for team in self.teams:
+            tmp_chpt.add_team(team)
+        for day in self.journees:
+            tmp_chpt.add_journee(day)
+            result.append(tmp_chpt.classAttack)
+        return result
+
+    def dbd_defense(self):
+        result = []
+        # Create temporary championship
+        tmp_chpt = Championnat()
+        for team in self.teams:
+            tmp_chpt.add_team(team)
+        for day in self.journees:
+            tmp_chpt.add_journee(day)
+            result.append(tmp_chpt.classDefense)
+        return result
+

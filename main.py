@@ -9,11 +9,6 @@ import time
 #Time measurement
 start = time.clock()
 
-# Add list to manage "Day by Day" datas
-genClassByDay = []
-attClassByDay = []
-defClassByDay = []
-
 # Get html content
 html = urllib2.urlopen(config.url)
 soup = BS(html)
@@ -33,13 +28,6 @@ for i in range(1, config.nb_journnee+1,1):
     journee = soup.findAll('li',{'class':attr})
     day = Journee(i, journee)
     chpt.add_journee(day)
-    genClassByDay.append(chpt.classByPoint)
-    attClassByDay.append(chpt.classAttack)
-    defClassByDay.append(chpt.classDefense)
-
-for team in chpt.classDefense:
-    print("%02d - %s" % (chpt.classDefense.index(team)+1, team))
-
 
 
 
