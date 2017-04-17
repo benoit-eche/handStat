@@ -1,5 +1,5 @@
-nb_journnee = 22
 nb_equipe = 12
+nb_journnee = (nb_equipe - 1) * 2
 win_pts = 3
 nul_pts = 2
 lose_pts = 1
